@@ -1,0 +1,80 @@
+{
+  "name": "@ycs77/eslint-config",
+  "type": "module",
+  "version": "7.2.3",
+  "packageManager": "pnpm@10.32.1",
+  "description": "Lucas Yang's ESLint config",
+  "author": "Lucas Yang <yangchenshin77@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/ycs77/eslint-config",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ycs77/eslint-config.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ycs77/eslint-config/issues"
+  },
+  "keywords": [
+    "eslint-config"
+  ],
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/index.d.mts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "pnpm gen && tsdown --dts",
+    "stub": "tsdown",
+    "dev:watch": "tsdown --watch",
+    "dev:inspector": "eslint-config-inspector --no-open",
+    "build:inspector": "eslint-config-inspector build",
+    "lint": "eslint . --concurrency auto",
+    "gen": "tsx scripts/typegen.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest",
+    "code-check": "pnpm lint && pnpm typecheck && pnpm test --run",
+    "prepack": "pnpm build",
+    "release": "bumpp --commit \"Release v%s\""
+  },
+  "peerDependencies": {
+    "eslint": "^9.10.0 || ^10.0.0",
+    "eslint-plugin-astro-explicit-wrapper": "^1.0.5"
+  },
+  "peerDependenciesMeta": {
+    "eslint-plugin-astro-explicit-wrapper": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@antfu/eslint-config": "catalog:prod",
+    "@typescript-eslint/parser": "catalog:prod",
+    "eslint-flat-config-utils": "catalog:prod",
+    "eslint-plugin-antfu": "catalog:prod",
+    "eslint-plugin-vue": "catalog:prod",
+    "local-pkg": "catalog:prod"
+  },
+  "devDependencies": {
+    "@eslint/config-inspector": "catalog:dev",
+    "@types/node": "catalog:dev",
+    "bumpp": "catalog:dev",
+    "eslint": "catalog:peer",
+    "eslint-plugin-astro": "catalog:dev",
+    "eslint-plugin-astro-explicit-wrapper": "catalog:peer",
+    "eslint-plugin-format": "catalog:dev",
+    "eslint-plugin-vuejs-accessibility": "catalog:dev",
+    "eslint-typegen": "catalog:dev",
+    "execa": "catalog:dev",
+    "tinyglobby": "catalog:dev",
+    "tsdown": "catalog:dev",
+    "tsx": "catalog:dev",
+    "typescript": "catalog:dev",
+    "vitest": "catalog:dev",
+    "vue": "catalog:dev"
+  },
+  "resolutions": {
+    "chokidar": "catalog:dev"
+  }
+}

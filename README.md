@@ -1,41 +1,41 @@
 # @agriweather/eslint-config
 
-> Extended from [@antfu/eslint-config](https://github.com/antfu/eslint-config)
+> 基於 [@antfu/eslint-config](https://github.com/antfu/eslint-config) 擴充
 
 [![NPM version][ico-version]][link-npm]
 [![Software License][ico-license]](LICENSE)
 [![GitHub Tests Action Status][ico-github-action]][link-github-action]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-- Auto fix for formatting (aimed to be used standalone **without** Prettier)
-- Reasonable defaults, best practices, only one line of config
-- Designed to work with TypeScript, JSX, Vue, JSON, YAML, Toml, Markdown, etc. Out-of-box.
-- Opinionated, but [very customizable](#customization)
-- [ESLint Flat config](https://eslint.org/docs/latest/use/configure/configuration-files-new), compose easily!
-- Optional [React](https://github.com/antfu/eslint-config#react), [Svelte](https://github.com/antfu/eslint-config#svelte), [UnoCSS](https://github.com/antfu/eslint-config#unocss), [Astro](https://github.com/antfu/eslint-config#astro), [Solid](https://github.com/antfu/eslint-config#solid) support
-- Optional [formatters](https://github.com/antfu/eslint-config#formatters) support for formatting CSS, HTML, XML, etc.
-- **Style principle**: Minimal for reading, stable for diff, consistent
-  - Sorted imports, dangling commas
-  - Single quotes, no semi
-  - Using [ESLint Stylistic](https://github.com/eslint-stylistic/eslint-stylistic)
-- Respects `.gitignore` by default
-- Requires ESLint v9.5.0+
+- 自動修正格式（設計為可**不搭配** Prettier 獨立使用）
+- 合理的預設值與最佳實踐，只需一行設定
+- 開箱即用，支援 TypeScript、JSX、Vue、JSON、YAML、Toml、Markdown 等
+- 固定風格，但[高度可自訂](#自訂)
+- 使用 [ESLint Flat config](https://eslint.org/docs/latest/use/configure/configuration-files-new)，輕鬆組合！
+- 可選支援 [React](https://github.com/antfu/eslint-config#react)、[Svelte](https://github.com/antfu/eslint-config#svelte)、[UnoCSS](https://github.com/antfu/eslint-config#unocss)、[Astro](https://github.com/antfu/eslint-config#astro)、[Solid](https://github.com/antfu/eslint-config#solid)
+- 可選支援[格式化工具](https://github.com/antfu/eslint-config#formatters)，用於格式化 CSS、HTML、XML 等
+- **風格原則**：易於閱讀、diff 穩定、一致
+  - 排序 import、結尾逗號
+  - 單引號、無分號
+  - 使用 [ESLint Stylistic](https://github.com/eslint-stylistic/eslint-stylistic)
+- 預設套用 `.gitignore`
+- 需要 ESLint v9.5.0+
 
-## Differences from @antfu/eslint-config
+## 與 @antfu/eslint-config 的差異
 
-- Opinionated stylistic rules
+- 固定風格的規則
 
-## Usage
+## 使用方式
 
-### Install
+### 安裝
 
 ```bash
 npm install eslint @agriweather/eslint-config -D
 ```
 
-### Create config file
+### 建立設定檔
 
-Create `eslint.config.js` in your project root:
+在專案根目錄建立 `eslint.config.js`：
 
 ```js
 // eslint.config.js
@@ -44,9 +44,9 @@ import agriweather from '@agriweather/eslint-config'
 export default agriweather()
 ```
 
-### Add script for package.json
+### 在 package.json 新增腳本
 
-For example:
+範例：
 
 ```json
 {
@@ -57,11 +57,11 @@ For example:
 }
 ```
 
-## VS Code support (auto fix)
+## VS Code 支援（自動修正）
 
-Install [VS Code ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+安裝 [VS Code ESLint 擴充套件](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
-Add the following settings to your `.vscode/settings.json`:
+將以下設定加入 `.vscode/settings.json`：
 
 ```jsonc
 {
@@ -109,84 +109,75 @@ Add the following settings to your `.vscode/settings.json`:
 }
 ```
 
-## Customization
+## 自訂
 
-Since v1.0, we migrated to [ESLint Flat config](https://eslint.org/docs/latest/use/configure/configuration-files-new). It provides much better organization and composition.
-
-Normally you only need to import the `agriweather` preset:
-
-```js
-// eslint.config.js
-import agriweather from '@agriweather/eslint-config'
-
-export default agriweather()
-```
-
-And that's it! Or you can configure each integration individually, for example:
+也可以個別設定每個整合，例如：
 
 ```js
 // eslint.config.js
 import agriweather from '@agriweather/eslint-config'
 
 export default agriweather({
-  // Type of the project. 'lib' for libraries, the default is 'app'
+  // 專案類型。'lib' 代表函式庫，預設為 'app'
   type: 'lib',
 
-  // `.eslintignore` is no longer supported in Flat config, use `ignores` instead
-  // The `ignores` option in the option (first argument) is specifically treated to always be global ignores
-  // And will **extend** the config's default ignores, not override them
-  // You can also pass a function to modify the default ignores
+  // Flat config 不再支援 `.eslintignore`，請改用 `ignores`
+  // 選項（第一個引數）中的 `ignores` 會被視為全域忽略
+  // 並會**擴充**設定的預設忽略，而非覆蓋
+  // 也可以傳入函式來修改預設忽略
   ignores: [
     '**/fixtures',
     // ...globs
   ],
 
-  // Parse the `.gitignore` file to get the ignores, on by default
+  // 解析 `.gitignore` 取得忽略清單，預設開啟
   gitignore: true,
 
-  // Enable stylistic formatting rules
+  // 啟用風格格式化規則
   stylistic: true,
 
-  // Or customize the stylistic rules
+  // 或自訂風格規則
   stylistic: {
     indent: 2, // 4, or 'tab'
     quotes: 'single', // or 'double'
   },
 
-  // TypeScript and Vue are auto-detected, you can also explicitly enable them:
+  // TypeScript 和 Vue 會自動偵測，也可以明確啟用：
   typescript: true,
   vue: true,
 
-  // Disable jsonc and yaml support
+  // 停用 jsonc 和 yaml 支援
   jsonc: false,
   yaml: false,
 })
 ```
 
-The `agriweather` factory function also accepts any number of arbitrary custom config overrides:
+`agriweather` 工廠函式也接受任意數量的自訂設定：
 
 ```js
 // eslint.config.js
 import agriweather from '@agriweather/eslint-config'
 
-export default agriweather(
-  {
-    // Configures for agriweather's config
-  },
-
-  // From the second arguments they are ESLint Flat Configs
-  // you can have multiple configs
-  {
+export default agriweather({
+  // agriweather 設定
+})
+  .append({
+    // 也可以附加規則，會與前面的設定合併
     files: ['**/*.ts'],
     rules: {},
-  },
-  {
+  })
+  .append({
+    // 或覆蓋前一個設定，會被取代
     rules: {},
-  },
-)
+  })
+  .append({
+    // 也可以附加設定，會與前一個合併
+    files: ['**/*.vue'],
+    rules: {},
+  })
 ```
 
-More advanced you can see the [@antfu/eslint-config's customization](https://github.com/antfu/eslint-config#customization) for more details.
+更進階的用法請參考 [@antfu/eslint-config 的自訂說明](https://github.com/antfu/eslint-config#customization)。
 
 ## Credit
 

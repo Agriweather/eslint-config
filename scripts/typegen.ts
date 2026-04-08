@@ -1,9 +1,9 @@
 import fs from 'node:fs/promises'
 import { flatConfigsToRulesDTS } from 'eslint-typegen/core'
 import { astro } from '../src/configs/astro'
-import { ycs77 } from '../src/factory'
+import { agriweather } from '../src/factory'
 
-const configs = await ycs77({
+const configs = await agriweather({
   astro: {
     astroExplicitWrapper: true,
   },
@@ -24,7 +24,7 @@ const configsForRulesDTS = [
 const configNames = configs
   .map(i => i.name)
   .filter(Boolean)
-  .filter(i => i?.startsWith('ycs77/')) as string[]
+  .filter(i => i?.startsWith('agriweather/')) as string[]
 
 let dts = await flatConfigsToRulesDTS(configsForRulesDTS, {
   includeAugmentation: false,

@@ -35,9 +35,9 @@ function runWithConfig(name: string, configs: OptionsConfig, ...items: TypedFlat
     })
     await fs.writeFile(join(target, 'eslint.config.js'), `
 // @eslint-disable
-import ycs77 from '../../dist/index.mjs'
+import agriweather from '../../dist/index.mjs'
 
-export default ycs77(
+export default agriweather(
   ${JSON.stringify(configs)},
   ...${JSON.stringify(items) ?? []},
 )

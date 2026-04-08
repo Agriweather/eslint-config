@@ -1,18 +1,18 @@
 {
-  "name": "@ycs77/eslint-config",
+  "name": "@agriweather/eslint-config",
   "type": "module",
-  "version": "7.2.3",
+  "version": "0.0.0",
   "packageManager": "pnpm@10.33.0",
-  "description": "Lucas Yang's ESLint config",
+  "description": "Agriweather's ESLint config",
   "author": "Lucas Yang <yangchenshin77@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/ycs77/eslint-config",
+  "homepage": "https://github.com/Agriweather/eslint-config",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ycs77/eslint-config.git"
+    "url": "git+https://github.com/Agriweather/eslint-config.git"
   },
   "bugs": {
-    "url": "https://github.com/ycs77/eslint-config/issues"
+    "url": "https://github.com/Agriweather/eslint-config/issues"
   },
   "keywords": [
     "eslint-config"
@@ -37,7 +37,7 @@
     "test": "vitest",
     "code-check": "pnpm lint && pnpm typecheck && pnpm test --run",
     "prepack": "pnpm build",
-    "release": "bumpp --commit \"Release v%s\""
+    "release": "bumpp"
   },
   "peerDependencies": {
     "eslint": "^9.10.0 || ^10.0.0",

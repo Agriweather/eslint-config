@@ -11,7 +11,7 @@ export async function markdown(
 
   return [
     {
-      name: 'ycs77/markdown/yaml',
+      name: 'agriweather/markdown/yaml',
       files: [GLOB_YAML_IN_MARKDOWN],
       rules: {
         ...stylistic

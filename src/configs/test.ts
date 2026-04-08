@@ -5,7 +5,7 @@ export async function test(): Promise<TypedFlatConfigItem[]> {
   return [
     {
       files: GLOB_TESTS,
-      name: 'ycs77/test/rules',
+      name: 'agriweather/test/rules',
       rules: {
         'test/consistent-test-it': 'off',
         'test/prefer-lowercase-title': 'off',

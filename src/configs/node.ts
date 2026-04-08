@@ -5,7 +5,7 @@ export async function node(): Promise<TypedFlatConfigItem[]> {
   return [
     {
       files: [GLOB_SRC],
-      name: 'ycs77/node/rules',
+      name: 'agriweather/node/rules',
       rules: {
         'node/prefer-global/buffer': ['error', 'always'],
         'node/prefer-global/process': ['error', 'always'],

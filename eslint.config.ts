@@ -1,6 +1,6 @@
-import ycs77, { GLOB_TS } from './src'
+import agriweather, { GLOB_TS } from './src'
 
-export default ycs77({
+export default agriweather({
   vue: {
     a11y: true,
   },

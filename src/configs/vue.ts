@@ -16,7 +16,7 @@ export async function vue(
   return [
     {
       files,
-      name: 'ycs77/vue/rules',
+      name: 'agriweather/vue/rules',
       rules: {
         'vue/v-bind-style': ['warn', 'shorthand', { sameNameShorthand: 'always' }],
         'vue/block-order': ['error', { order: ['template', 'script', 'style'] }],

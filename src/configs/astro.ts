@@ -55,7 +55,7 @@ export async function astro(
 
   return [
     {
-      name: 'ycs77/astro/setup',
+      name: 'agriweather/astro/setup',
       plugins: {
         ...enableAstroExplicitWrapper
           ? { 'astro-explicit-wrapper': astroExplicitWrapperPlugin }
@@ -63,7 +63,7 @@ export async function astro(
       },
     },
     {
-      name: 'ycs77/astro/rules',
+      name: 'agriweather/astro/rules',
       files,
       languageOptions: {
         globals: {
@@ -93,7 +93,7 @@ export async function astro(
     {
       // Define the configuration for `<script>` tag.
       // Script in `<script>` is assigned a virtual file name with the `.js` extension.
-      name: 'ycs77/astro/js/rules',
+      name: 'agriweather/astro/js/rules',
       files: [GLOB_ASTRO_JS],
       languageOptions: {
         sourceType: 'module',
@@ -111,7 +111,7 @@ export async function astro(
     {
       // Define the configuration for `<script>` tag when using `client-side-ts` processor.
       // Script in `<script>` is assigned a virtual file name with the `.ts` extension.
-      name: 'ycs77/astro/ts/rules',
+      name: 'agriweather/astro/ts/rules',
       files: [GLOB_ASTRO_TS],
       languageOptions: {
         parser: tsESLintParser ?? undefined,

@@ -3,7 +3,7 @@ import type { TypedFlatConfigItem } from '../types'
 export async function stylistic(): Promise<TypedFlatConfigItem[]> {
   return [
     {
-      name: 'ycs77/stylistic/rules',
+      name: 'agriweather/stylistic/rules',
       rules: {
         'antfu/consistent-chaining': 'off',
         'antfu/consistent-list-newline': ['error', {
@@ -44,7 +44,7 @@ export async function stylistic(): Promise<TypedFlatConfigItem[]> {
       },
     },
     {
-      name: 'ycs77/stylistic/config/rules',
+      name: 'agriweather/stylistic/config/rules',
       files: [
         '**/postcss.config.?([cm])[jt]s',
         '**/eslint.config.?([cm])[jt]s',

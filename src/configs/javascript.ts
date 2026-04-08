@@ -3,7 +3,7 @@ import type { TypedFlatConfigItem } from '../types'
 export async function javascript(): Promise<TypedFlatConfigItem[]> {
   return [
     {
-      name: 'ycs77/javascript/rules',
+      name: 'agriweather/javascript/rules',
       rules: {
         'unused-imports/no-unused-vars': [
           'error',

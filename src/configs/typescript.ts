@@ -18,7 +18,7 @@ export async function typescript(
   return [
     {
       files,
-      name: 'ycs77/typescript/rules',
+      name: 'agriweather/typescript/rules',
       rules: {
         'ts/ban-ts-comment': 'off',
       },

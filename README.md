@@ -1,4 +1,4 @@
-# @ycs77/eslint-config
+# @agriweather/eslint-config
 
 > Extended from [@antfu/eslint-config](https://github.com/antfu/eslint-config)
 
@@ -31,7 +31,7 @@
 ### Install
 
 ```bash
-npm install eslint @ycs77/eslint-config -D
+npm install eslint @agriweather/eslint-config -D
 ```
 
 ### Create config file
@@ -40,9 +40,9 @@ Create `eslint.config.js` in your project root:
 
 ```js
 // eslint.config.js
-import ycs77 from '@ycs77/eslint-config'
+import agriweather from '@agriweather/eslint-config'
 
-export default ycs77()
+export default agriweather()
 ```
 
 ### Add script for package.json
@@ -117,22 +117,22 @@ Add the following settings to your `.vscode/settings.json`:
 
 Since v1.0, we migrated to [ESLint Flat config](https://eslint.org/docs/latest/use/configure/configuration-files-new). It provides much better organization and composition.
 
-Normally you only need to import the `ycs77` preset:
+Normally you only need to import the `agriweather` preset:
 
 ```js
 // eslint.config.js
-import ycs77 from '@ycs77/eslint-config'
+import agriweather from '@agriweather/eslint-config'
 
-export default ycs77()
+export default agriweather()
 ```
 
 And that's it! Or you can configure each integration individually, for example:
 
 ```js
 // eslint.config.js
-import ycs77 from '@ycs77/eslint-config'
+import agriweather from '@agriweather/eslint-config'
 
-export default ycs77({
+export default agriweather({
   // Type of the project. 'lib' for libraries, the default is 'app'
   type: 'lib',
 
@@ -167,15 +167,15 @@ export default ycs77({
 })
 ```
 
-The `ycs77` factory function also accepts any number of arbitrary custom config overrides:
+The `agriweather` factory function also accepts any number of arbitrary custom config overrides:
 
 ```js
 // eslint.config.js
-import ycs77 from '@ycs77/eslint-config'
+import agriweather from '@agriweather/eslint-config'
 
-export default ycs77(
+export default agriweather(
   {
-    // Configures for ycs77's config
+    // Configures for agriweather's config
   },
 
   // From the second arguments they are ESLint Flat Configs
@@ -195,15 +195,16 @@ More advanced you can see the [@antfu/eslint-config's customization](https://git
 ## Credit
 
 - [@antfu/eslint-config](https://github.com/antfu/eslint-config)
+- [@ycs77/eslint-config](https://github.com/ycs77/eslint-config)
 
 ## License
 
 Under the [MIT LICENSE](LICENSE)
 
-[ico-version]: https://img.shields.io/npm/v/@ycs77/eslint-config?style=flat-square
+[ico-version]: https://img.shields.io/npm/v/@agriweather/eslint-config?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen?style=flat-square
-[ico-github-action]: https://img.shields.io/github/actions/workflow/status/ycs77/eslint-config/ci.yml?branch=main&label=tests&style=flat-square
-[ico-downloads]: https://img.shields.io/npm/dt/@ycs77/eslint-config?style=flat-square
-[link-npm]: https://www.npmjs.com/package/@ycs77/eslint-config
-[link-github-action]: https://github.com/ycs77/eslint-config/actions/workflows/ci.yml?query=branch%3Amain
-[link-downloads]: https://www.npmjs.com/package/@ycs77/eslint-config
+[ico-github-action]: https://img.shields.io/github/actions/workflow/status/Agriweather/eslint-config/ci.yml?branch=main&label=tests&style=flat-square
+[ico-downloads]: https://img.shields.io/npm/dt/@agriweather/eslint-config?style=flat-square
+[link-npm]: https://www.npmjs.com/package/@agriweather/eslint-config
+[link-github-action]: https://github.com/Agriweather/eslint-config/actions/workflows/ci.yml?query=branch%3Amain
+[link-downloads]: https://www.npmjs.com/package/@agriweather/eslint-config

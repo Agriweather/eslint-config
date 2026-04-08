@@ -47,7 +47,7 @@
   // GitHub Copilot Chat commit message generation instructions
   "github.copilot.chat.commitMessageGeneration.instructions": [
     {
-      "text": "Generate concise, descriptive Git commit messages in English. Use imperative mood and keep under 72 characters. Focus on the 'what' and 'why' of the change. Avoid generic messages like 'update code' or 'fix bug'. Do not use type prefixes (e.g., feat:, fix:) unless the project uses Conventional Commits. Output only the commit message with no explanation."
+      "text": "Write commit messages in English using imperative mood, using Conventional Commits format (e.g., 'feat: add new feature', 'fix: resolve bug'). Focus on the 'what' and 'why' of the change, not the 'how'. Avoid generic messages like 'update code' or 'fix bug'."
     }
   ]
 }

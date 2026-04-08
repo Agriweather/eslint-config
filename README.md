@@ -24,7 +24,6 @@
 ## Differences from @antfu/eslint-config
 
 - Opinionated stylistic rules
-- Better Astro rules
 
 ## Usage
 
@@ -69,9 +68,6 @@ Add the following settings to your `.vscode/settings.json`:
   // Disable the default formatter, use eslint instead
   "prettier.enable": false,
   "editor.formatOnSave": false,
-  "[astro]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
 
   // Auto fix
   "editor.codeActionsOnSave": {

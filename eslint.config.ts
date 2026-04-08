@@ -4,9 +4,6 @@ export default agriweather({
   vue: {
     a11y: true,
   },
-  astro: {
-    astroExplicitWrapper: true,
-  },
   typescript: {
     erasableOnly: true,
   },

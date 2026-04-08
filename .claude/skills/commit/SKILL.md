@@ -25,4 +25,4 @@ metadata:
 
 - If there's nothing to commit, say so and stop.
 - When changes span unrelated concerns, suggest splitting; if the user prefers one commit, pick the type matching the primary intent.
-- **Omit the body unless it is truly necessary.** A one-line subject is preferred; only add a body when the *why* or context cannot be inferred from the diff and the subject alone.
+- **Omit the body unless it is truly necessary.** A one-line subject is preferred; only add a body when the _why_ or context cannot be inferred from the diff and the subject alone.

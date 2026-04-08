@@ -40,13 +40,7 @@
     "release": "bumpp"
   },
   "peerDependencies": {
-    "eslint": "^9.10.0 || ^10.0.0",
-    "eslint-plugin-astro-explicit-wrapper": "^1.0.5"
-  },
-  "peerDependenciesMeta": {
-    "eslint-plugin-astro-explicit-wrapper": {
-      "optional": true
-    }
+    "eslint": "^9.10.0 || ^10.0.0"
   },
   "dependencies": {
     "@antfu/eslint-config": "catalog:prod",
@@ -61,11 +55,8 @@
     "@types/node": "catalog:dev",
     "bumpp": "catalog:dev",
     "eslint": "catalog:peer",
-    "eslint-plugin-astro": "catalog:dev",
-    "eslint-plugin-astro-explicit-wrapper": "catalog:peer",
     "eslint-plugin-format": "catalog:dev",
     "eslint-plugin-vuejs-accessibility": "catalog:dev",
-    "eslint-typegen": "catalog:dev",
     "execa": "catalog:dev",
     "tinyglobby": "catalog:dev",
     "tsdown": "catalog:dev",

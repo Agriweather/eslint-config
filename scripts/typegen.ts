@@ -1,12 +1,7 @@
 import fs from 'node:fs/promises'
-import { flatConfigsToRulesDTS } from 'eslint-typegen/core'
-import { astro } from '../src/configs/astro'
 import { agriweather } from '../src/factory'
 
 const configs = await agriweather({
-  astro: {
-    astroExplicitWrapper: true,
-  },
   imports: true,
   markdown: true,
   stylistic: true,
@@ -15,22 +10,12 @@ const configs = await agriweather({
   vue: true,
 })
 
-const configsForRulesDTS = [
-  ...(await astro({
-    astroExplicitWrapper: true,
-  })),
-]
-
 const configNames = configs
   .map(i => i.name)
   .filter(Boolean)
   .filter(i => i?.startsWith('agriweather/')) as string[]
 
-let dts = await flatConfigsToRulesDTS(configsForRulesDTS, {
-  includeAugmentation: false,
-})
-
-dts += `
+const dts = `
 // Names of all the configs
 export type ConfigNames = ${configNames.map(i => `'${i}'`).join(' | ')}
 `

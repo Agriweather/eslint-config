@@ -1,11 +1,10 @@
-import type { ConfigNames as AntfuConfigNames, Awaitable } from '@antfu/eslint-config'
+import type { Awaitable } from '@antfu/eslint-config'
 import type { Linter } from 'eslint'
 import type { FlatConfigComposer } from 'eslint-flat-config-utils'
 import type { ConfigNames, OptionsConfig, TypedFlatConfigItem } from './types'
 import { antfu } from '@antfu/eslint-config'
 import { isPackageExists } from 'local-pkg'
 import {
-  astro,
   e18e,
   imports,
   javascript,
@@ -27,9 +26,8 @@ const VuePackages = [
 export function agriweather(
   options: OptionsConfig & Omit<TypedFlatConfigItem, 'files' | 'ignores'> = {},
   ...userConfigs: Awaitable<TypedFlatConfigItem | TypedFlatConfigItem[] | FlatConfigComposer<any, any> | Linter.Config[]>[]
-): FlatConfigComposer<TypedFlatConfigItem, AntfuConfigNames | ConfigNames> {
+): FlatConfigComposer<TypedFlatConfigItem, ConfigNames> {
   const {
-    astro: enableAstro = false,
     componentExts = [],
     e18e: enableE18e = true,
     imports: enableImports = true,
@@ -38,10 +36,6 @@ export function agriweather(
     typescript: enableTypeScript = isPackageExists('typescript'),
     vue: enableVue = VuePackages.some(i => isPackageExists(i)),
   } = options
-
-  const astroOptions = typeof options.astro === 'boolean'
-    ? {}
-    : options.astro || {}
 
   let composer = antfu(options)
 
@@ -85,15 +79,6 @@ export function agriweather(
       vue({
         stylistic: !!enableStylistic,
         typescript: !!enableTypeScript,
-      })
-    )
-  }
-
-  if (enableAstro) {
-    composer = composer.append(
-      astro({
-        ...astroOptions,
-        stylistic: enableStylistic,
       })
     )
   }

@@ -1,4 +1,4 @@
-import type { OptionsConfig, TypedFlatConfigItem } from '../src/types'
+import type { OptionsConfig, TypedFlatConfigItem } from '@antfu/eslint-config'
 import fs from 'node:fs/promises'
 import { join, resolve } from 'node:path'
 import { execa } from 'execa'
@@ -16,7 +16,6 @@ afterAll(async () => {
 })
 
 runWithConfig('all', {
-  astro: true,
   typescript: true,
   vue: true,
 })

@@ -10,7 +10,7 @@
 - 自動修正格式（設計為可**不搭配** Prettier 獨立使用）
 - 合理的預設值與最佳實踐，只需一行設定
 - 開箱即用，支援 TypeScript、JSX、Vue、JSON、YAML、Toml、Markdown 等
-- 固定風格，但[高度可自訂](#自訂)
+- 風格鮮明，同時[高度可自訂](#自訂)
 - 使用 [ESLint Flat config](https://eslint.org/docs/latest/use/configure/configuration-files-new)，輕鬆組合！
 - 可選支援 [React](https://github.com/antfu/eslint-config#react)、[Svelte](https://github.com/antfu/eslint-config#svelte)、[UnoCSS](https://github.com/antfu/eslint-config#unocss)、[Astro](https://github.com/antfu/eslint-config#astro)、[Solid](https://github.com/antfu/eslint-config#solid)
 - 可選支援[格式化工具](https://github.com/antfu/eslint-config#formatters)，用於格式化 CSS、HTML、XML 等
@@ -23,7 +23,7 @@
 
 ## 與 @antfu/eslint-config 的差異
 
-- 固定風格的規則
+- 更多具明確風格主張的規則
 
 ## 使用方式
 

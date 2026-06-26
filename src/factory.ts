@@ -5,7 +5,6 @@ import type { ConfigNames, OptionsConfig, TypedFlatConfigItem } from './types'
 import { antfu } from '@antfu/eslint-config'
 import { isPackageExists } from 'local-pkg'
 import {
-  e18e,
   imports,
   javascript,
   markdown,
@@ -29,13 +28,14 @@ export function agriweather(
 ): FlatConfigComposer<TypedFlatConfigItem, ConfigNames> {
   const {
     componentExts = [],
-    e18e: enableE18e = true,
     imports: enableImports = true,
     node: enableNode = true,
     stylistic: enableStylistic = true,
     typescript: enableTypeScript = isPackageExists('typescript'),
     vue: enableVue = VuePackages.some(i => isPackageExists(i)),
   } = options
+
+  options.markdown = options.markdown ?? false
 
   let composer = antfu(options)
 
@@ -48,10 +48,6 @@ export function agriweather(
 
   if (enableImports) {
     composer = composer.append(imports())
-  }
-
-  if (enableE18e) {
-    composer = composer.append(e18e())
   }
 
   if (enableStylistic) {
@@ -83,7 +79,7 @@ export function agriweather(
     )
   }
 
-  if (options.markdown ?? true) {
+  if (options.markdown) {
     composer = composer.append(
       markdown({
         stylistic: enableStylistic,

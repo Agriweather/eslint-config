@@ -12,7 +12,7 @@
 - 開箱即用，支援 TypeScript、JSX、Vue、JSON、YAML、Toml、Markdown 等
 - 風格鮮明，同時[高度可自訂](#自訂)
 - 使用 [ESLint Flat config](https://eslint.org/docs/latest/use/configure/configuration-files-new)，輕鬆組合！
-- 可選支援 [React](https://github.com/antfu/eslint-config#react)、[Svelte](https://github.com/antfu/eslint-config#svelte)、[UnoCSS](https://github.com/antfu/eslint-config#unocss)、[Astro](https://github.com/antfu/eslint-config#astro)、[Solid](https://github.com/antfu/eslint-config#solid)
+- 可選支援 [React](https://github.com/antfu/eslint-config#react)、[Svelte](https://github.com/antfu/eslint-config#svelte)、[UnoCSS](https://github.com/antfu/eslint-config#unocss)、[Solid](https://github.com/antfu/eslint-config#solid)
 - 可選支援[格式化工具](https://github.com/antfu/eslint-config#formatters)，用於格式化 CSS、HTML、XML 等
 - **風格原則**：易於閱讀、diff 穩定、一致
   - 排序 import、結尾逗號
@@ -140,6 +140,7 @@ export default agriweather({
   stylistic: {
     indent: 2, // 4, or 'tab'
     quotes: 'single', // or 'double'
+    braceStyle: 'stroustrup', // '1tbs', or 'allman'
   },
 
   // TypeScript 和 Vue 會自動偵測，也可以明確啟用：
